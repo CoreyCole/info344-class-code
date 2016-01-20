@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-.idea
-node_modules
-.DS_Store
-=======
 node_modules
 .idea
 .DS_Store
@@ -13,4 +8,10 @@ node_modules
 # except files ending in `.template` or `.md`
 !**/secret/*.template
 !**/secret/*.md
->>>>>>> b12876ebfda144fc286d5a39eeaee531fc8241cd
+
+# ignore .vagrant directory
+.vagrant
+
+# and the VSCode typings directory
+typings
+
