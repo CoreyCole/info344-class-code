@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="icon" href="img/page-icon.png">
     
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.min.js"></script>
     <script src="js/index.js"></script>
 
@@ -22,11 +22,11 @@
     </header>
     
     <section class="stories">
-        <form name="newStoryForm" ng-submit="saveStory()" novalidate>
+        <form ng-submit="saveStory()" novalidate>
             <div class="form-group">
                 <input type="url"
                     class="form-control"
-                    ng-model="newStory.url"
+                    ng-model="url"
                     placeholder="enter a URL"
                     required
                 >            

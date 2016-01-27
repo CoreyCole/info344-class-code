@@ -1,7 +1,8 @@
 angular.module('news', [])
     .constant('apiRoot', '/api/v1')
     .controller('StoriesController', function($scope, $http, apiRoot) {       
-        $scope.newStory = {};
+        $scope.newStory = {url: 'reddit.com'};
+        $scope.url = 'asdf';
         
         $http.get(apiRoot + '/stories')
             .then(function(response) {
@@ -9,11 +10,15 @@ angular.module('news', [])
             });            
         
         $scope.saveStory = function() {
+            console.log($scope.newStory);
+            console.log($scope.url);
+            /*
             $http.post(apiRoot + '/stories', $scope.newStory)
                 .then(function(response) {
                     $scope.stories.push(response.data);
                     $scope.newStory = {};
                 });
+            */
         };
         
         $scope.upVote = function(story) {
