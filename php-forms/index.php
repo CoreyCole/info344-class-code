@@ -11,6 +11,7 @@ $appId = '2de143494c0b295cca9337e1e96b00e0';
 require_once 'connection.php';
 require_once 'models/zip-model.php';
 
+<<<<<<< HEAD
 $q = $_GET['q'];
 
 if (strlen($q) > 0) {
@@ -23,6 +24,24 @@ if (count($matches) == 1) {
     $zip = $matches[0]['zip'];
     $url = "http://api.openweathermap.org/data/2.5/weather?zip={$zip},us&units=imperial&appid={$appId}";
     $weatherData = json_decode(file_get_contents($url));
+=======
+if (isset($_GET['q'])) {
+    $q = $_GET['q'];   
+}
+else {
+    $q = '';
+}
+
+$conn = getConnection();
+$zipModel = new Zips($conn);
+$matches = $zipModel->search($q);
+
+if (count($matches) == 1) {
+    $zip = $matches[0]['zip'];
+    $url = "http://api.openweathermap.org/data/2.5/weather?zip={$zip},us&units=imperial&appid={$appId}";
+    $json = file_get_contents($url);
+    $weatherData = json_decode($json);
+>>>>>>> 30714306d6f904ab140d2204ca886eed7ea0a5ed
 }
 
 ?>
@@ -40,6 +59,7 @@ if (count($matches) == 1) {
 </head>
 <body class="container">
     <?php 
+<<<<<<< HEAD
     include 'views/search-form.php';
     if (isset($q)) {
         include 'views/matches.php';
@@ -50,6 +70,16 @@ if (count($matches) == 1) {
     }
     ?>
     
+=======
+    include 'views/search-form.php';   
+    include 'views/matches.php';
+    
+    if (isset($weatherData)) {
+        include 'views/weather.php';
+    }
+    ?>
+       
+>>>>>>> 30714306d6f904ab140d2204ca886eed7ea0a5ed
    
 </body>
 </html>

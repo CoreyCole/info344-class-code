@@ -15,3 +15,5 @@ node_modules
 # and the VSCode typings directory
 typings
 
+# ignore .key files
+*.key

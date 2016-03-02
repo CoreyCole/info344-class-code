@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 $name = "Corey";
 
 $url = parse_url($_SERVER['REQUEST_URI']);
